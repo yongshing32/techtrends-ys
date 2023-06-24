@@ -18,7 +18,7 @@ jobs:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: |
-          docker build -t techtrends:latest -f Dockerfile .
+          docker build -t techtrends:latest -f dockerfile .
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
           docker tag techtrends:latest $DOCKER_USERNAME/techtrends:latest
           docker push $DOCKER_USERNAME/techtrends:latest
