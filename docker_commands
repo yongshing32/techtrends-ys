@@ -1,0 +1,18 @@
+## Docker commands used to build the application 
+# TODO: docker build -t techtrends-app .
+
+## Docker commands used to run the application
+# TODO: docker run -d --name techtrends -p 7111:3111 techtrends-app
+
+## commands used to get the application logs
+# TODO: 
+1. docker exec -it techtrends bash;
+2. cat app.log
+
+## Logs from the container running the TechTrends application
+# 
+
+2023-06-23 09:24:07,780 - INFO - Accessed post with ID: 1 - Title: First Post
+2023-06-23 09:24:14,071 - WARNING - 404 - Post not found with ID: 4
+2023-06-23 09:24:35,423 - INFO - Created a new post: fourth post
+2023-06-23 09:25:04,704 - INFO - Accessed the "About Us" page
