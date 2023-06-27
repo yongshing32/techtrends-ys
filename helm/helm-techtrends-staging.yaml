@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: techtrends-staging
+spec:
+  source:
+    type: local
+    path: .
+  helm:
+    chart: values-staging
+    version: 1.0.0
+  parameters:
+    image: techtrends/techtrends:latest
+    ingress:
+      enabled: true
+      hosts:
+        - techtrends.staging.example.com
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: staging

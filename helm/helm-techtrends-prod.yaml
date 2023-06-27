@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: techtrends-prod
+spec:
+  source:
+    type: local
+    path: .
+  helm:
+    chart: values-prod
+    version: 1.0.0
+  parameters:
+    image: techtrends/techtrends:latest
+    ingress:
+      enabled: true
+      hosts:
+        - techtrends.prod.example.com
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: production
